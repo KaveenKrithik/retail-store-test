@@ -1,0 +1,148 @@
+
+.searchbar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(145deg, #e6f3ff, #d4e9f7);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.searchbar-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+    animation: rotateBackground 20s linear infinite;
+    z-index: 0;
+}
+
+@keyframes rotateBackground {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.searchbar-box {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.searchbar-box:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+}
+
+
+.searchbar-input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    padding: 14px 18px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.searchbar-input-container:hover {
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+    background-color: rgba(240, 248, 255, 0.95);
+}
+
+
+.search-icon {
+    font-size: 24px;
+    color: #007bff;
+}
+
+
+.clear-icon {
+    font-size: 20px;
+    color: #ff6b6b;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.clear-icon:hover {
+    transform: scale(1.2);
+    color: #ff3b3b;
+}
+
+
+.searchbar-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 18px;
+    color: #333;
+    font-weight: 500;
+}
+
+
+.suggestions {
+    margin: 16px 0;
+    padding: 0;
+    list-style-type: none;
+    border-radius: 10px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    max-height: 250px;
+    overflow-y: auto;
+    animation: fadeIn 0.4s ease;
+}
+
+.suggestion-item {
+    padding: 16px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-item:hover {
+    background-color: #f0faff;
+    transform: translateX(5px);
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.product-details {
+    margin-top: 20px;
+    border-top: 1
+}

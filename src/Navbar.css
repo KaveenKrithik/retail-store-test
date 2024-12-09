@@ -1,0 +1,121 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    background: linear-gradient(90deg, #001f3f, #0052cc, #007bff);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    font-family: 'Poppins', sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.navbar-logo {
+    height: 90px;  
+    width: auto;   
+    object-fit: contain; 
+}
+
+
+.navbar-title-container {
+    display: flex;
+    align-items: center;
+}
+
+
+.navbar-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.navbar-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    position: relative;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    overflow: hidden;
+    text-shadow: 0 0 5px #ffffff;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar-link:hover {
+    color: #00e0ff;
+    text-shadow: 0 0 15px #00e0ff;
+    transform: scale(1.1);
+}
+
+.navbar-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(0, 192, 255, 0.6), rgba(0, 0, 0, 0));
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.navbar-link:hover::before {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 1;
+}
+
+.navbar-icon {
+    margin-right: 10px;
+    font-size: 1.6rem;
+    color: #ffffff;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-link:hover .navbar-icon {
+    color: #00e0ff;
+}
+
+.navbar:hover {
+    box-shadow: 0 10px 25px rgba(0, 128, 255, 0.7);
+}
+
+
+@media (max-width: 768px) {
+    .navbar-title-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-logo {
+        height: 60px;  
+    }
+
+    .navbar-links {
+        gap: 1rem;
+        flex-direction: column;  
+    }
+
+    .navbar-link {
+        font-size: 1rem;
+    }
+
+    .navbar-icon {
+        font-size: 1.4rem;
+    }
+}
+
+
+
+
+
+
